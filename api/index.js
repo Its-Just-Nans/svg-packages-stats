@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const cutLongString = (str, n = 25) => (str.length > n ? `${str.substr(0, n - 1)}…` : str);
+const cutLongString = (str, n = 25) => (str?.length > n ? `${str.substr(0, n - 1)}…` : str);
 
 const generateText = (username, packagesList, period) => {
     let count = 15;
@@ -39,7 +39,7 @@ const getPackagesOfUser = async (username) => {
     return axios
         .get(url)
         .then(({ data }) => {
-            return data.objects.map(({ package: x }) => x);
+            return data?.objects.map(({ package: x }) => x) || [];
         })
         .catch(() => {
             return [];
@@ -47,12 +47,12 @@ const getPackagesOfUser = async (username) => {
 };
 
 const getDownloads = async (names, period) => {
-    const url = `https://api.npmjs.org/downloads/point/${period}/${names}`;
+    const url = `https://api.npmjs.org/downloads/point/${period}/${names || ","}`;
     return axios
         .get(url)
         .then(({ data }) => {
             const { [""]: _notUsed, ...rest } = data;
-            return rest;
+            return rest || {};
         })
         .catch(() => {
             return {};
