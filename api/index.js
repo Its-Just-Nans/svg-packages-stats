@@ -23,7 +23,7 @@ ${packagesList.reduce((previous, current) => {
 <a href="https://www.npmjs.com/package/${current.name}">
 <g transform="translate(0, ${25 + count})">
 <text class="stat bold" x="25" y="${count + 10}" font-size="15">${current.downloads}</text>
-<text class="stat bold" x="55" y="${count}" font-size="15">${cutLongString(current.name, 50)}</text>
+<text class="stat bold" x="55" y="${count}" fill="#2f80ed" font-size="15">${cutLongString(current.name, 50)}</text>
 <text class="stat" x="55" y="${count + 20}" font-size="15" >${cutLongString(current.description, 60)}</text>
 </g>
 </a>
