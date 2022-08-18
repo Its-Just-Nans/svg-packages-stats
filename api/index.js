@@ -60,7 +60,7 @@ const getDownloads = async (names, period) => {
 };
 
 export default async (request, response) => {
-    let username = request?.query?.username || "n4n5";
+    const username = request?.query?.username || "n4n5";
     console.log(username);
     const period = request?.query?.period || "last-week";
     const packages = await getPackagesOfUser(username);
@@ -85,6 +85,7 @@ export default async (request, response) => {
         period
     );
     if (response) {
+        response.setHeader("Content-Type", "image/svg+xml");
         response.status(200).send(svg);
     } else {
         return svg;
