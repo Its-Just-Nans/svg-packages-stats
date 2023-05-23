@@ -6,6 +6,10 @@
 <img src="https://svg-packages-stats.vercel.app/api?author=YOUR_USERNAME" />
 ```
 
+## Example
+
+![Packages](https://svg-packages-stats.vercel.app/api?author=n4n5)
+
 ## Default options
 
 - `author`: `n4n5`
