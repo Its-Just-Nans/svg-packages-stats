@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const cutLongString = (str, n = 25) => (str?.length > n ? `${str.substr(0, n - 1)}…` : str);
 
 const generateText = (author, packagesList, period) => {
@@ -37,10 +35,10 @@ ${packagesList.reduce((previous, current) => {
 
 const getPackagesOfUser = async (author, maintainer) => {
     const url = `https://registry.npmjs.org/-/v1/search?text=author:${author}%20maintainer:${maintainer}`;
-    return axios
-        .get(url)
-        .then(({ data }) => {
-            return data?.objects.map(({ package: x }) => x) || [];
+    return fetch(url)
+        .then(async (req) => {
+            const data = await req.json();
+            return data?.objects.map(({ package: x }) => x).filter(({ name }) => !name.includes("/")) || [];
         })
         .catch(() => {
             return [];
@@ -49,9 +47,9 @@ const getPackagesOfUser = async (author, maintainer) => {
 
 const getDownloads = async (names, period) => {
     const url = `https://api.npmjs.org/downloads/point/${period}/${names || ","}`;
-    return axios
-        .get(url)
-        .then(({ data }) => {
+    return fetch(url)
+        .then(async (resp) => {
+            const data = await resp.json();
             const { [""]: _notUsed, ...rest } = data;
             return rest || {};
         })
@@ -83,7 +81,7 @@ export default async (request, response) => {
     }, []);
     const svg = generateText(
         author,
-        packagesList.sort((a, b) => (a.downloads < b.downloads ? 1 : -1)),
+        packagesList.toSorted((a, b) => (a.downloads < b.downloads ? 1 : -1)),
         period
     );
     if (response) {
