@@ -1,4 +1,4 @@
-# svg-packages-stats
+# svg-packages-stats &middot; [![npm version](https://img.shields.io/npm/v/svg-packages-stats)](https://www.npmjs.org/package/astrosim--barchart) [![download count](https://img.shields.io/npm/dw/svg-packages-stats)](https://www.npmjs.org/package/svg-packages-stats)
 
 ## Usage
 
