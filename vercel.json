@@ -9,5 +9,6 @@
             "source": "/",
             "destination": "https://github.com/Its-Just-Nans/svg-packages-stats"
         }
-    ]
+    ],
+    "outputDirectory": "."
 }
