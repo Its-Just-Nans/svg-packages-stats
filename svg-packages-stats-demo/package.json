@@ -1,0 +1,15 @@
+{
+    "name": "svg-packages-stats-demo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "npm i && node ."
+    },
+    "author": "n4n5",
+    "license": "MIT",
+    "dependencies": {
+        "svg-packages-stats": "^1.0.1"
+    }
+}
