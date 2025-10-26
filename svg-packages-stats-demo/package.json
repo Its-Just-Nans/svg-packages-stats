@@ -5,11 +5,11 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "npm i && node ."
+        "test": "npm install && node ."
     },
     "author": "n4n5",
     "license": "MIT",
     "dependencies": {
-        "svg-packages-stats": "^1.0.1"
+        "svg-packages-stats": "^1.0.3"
     }
 }
