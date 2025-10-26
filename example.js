@@ -1,5 +1,4 @@
-import makeSVG from "./api/index.js";
+import makeSVG from "svg-packages-stats";
 
-makeSVG().then((svg) => {
-    console.log(svg);
-});
+const svg = await makeSVG("n4n5", "n4n5", "last-week");
+console.log(svg);

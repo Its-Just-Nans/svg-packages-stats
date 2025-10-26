@@ -1,7 +1,7 @@
 {
     "name": "svg-packages-stats",
-    "version": "1.0.0",
-    "description": "",
+    "version": "1.0.1",
+    "description": "Generates a svg from your npm packages",
     "main": "index.js",
     "type": "module",
     "scripts": {

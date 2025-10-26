@@ -6,6 +6,14 @@
 <img src="https://svg-packages-stats.vercel.app/api?author=YOUR_USERNAME" />
 ```
 
+## Js usage
+
+```js
+import makeSVG from "svg-packages-stats";
+
+const svg = await makeSVG("n4n5", "n4n5", "last-week");
+```
+
 ## Example
 
 ![Packages](https://svg-packages-stats.vercel.app/api?author=n4n5)
