@@ -6,7 +6,7 @@
     "type": "module",
     "scripts": {
         "test": "cd svg-packages-stats-demo && npm run test",
-        "deploy": "npm add svg-packages-stats && npm install"
+        "build": "npm add svg-packages-stats && npm install"
     },
     "repository": {
         "type": "git",
